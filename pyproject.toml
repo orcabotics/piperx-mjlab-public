@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piper-mjlab"
+version = "0.3.0"
+description = "Minimal AgileX PiPER-X environments and demos for MJLab"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = "MIT"
+dependencies = ["mjlab==1.6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+piperx-pick-place = "piper_mjlab.demo:main"
+piperx-demo-state = "piper_mjlab.demo:state_main"
+piperx-demo-vision = "piper_mjlab.demo:vision_main"
+piperx-rl-train = "piper_mjlab.rl:train_main"
+piperx-rl-play = "piper_mjlab.rl:play_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+exclude = ["piper_mjlab.real_arm_yoyo_control*"]
+
+[tool.setuptools.package-data]
+piper_mjlab = ["assets/**/*"]
