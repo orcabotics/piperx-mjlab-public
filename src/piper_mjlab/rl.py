@@ -40,8 +40,8 @@ _TARGET_CLIP = {
   "joint2": (0.0, 3.142),
   "joint3": (-2.967, 0.0),
   "joint[4-5]": (-1.553, 1.553),
-  "joint6": (-2.8715, 2.8715),
-  "gripper_joint1": (0.0, 0.05),
+  "joint6": (-2.094, 2.094),
+  "gripper_joint1": (-0.03, 0.06),
 }
 _CNN_CFG = {
   "output_channels": [16, 32],
@@ -194,7 +194,7 @@ def make_ppo_cfg(observation_mode: ObservationMode = "state") -> RslRlOnPolicyRu
     experiment_name=f"piperx_pick_cube_{observation_mode}",
     logger="tensorboard",
     upload_model=False,
-    clip_actions=1.0,
+    clip_actions=None,
     save_interval=100,
     num_steps_per_env=24,
     max_iterations=3000,
