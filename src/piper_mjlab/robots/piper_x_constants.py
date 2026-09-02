@@ -120,13 +120,13 @@ def get_spec() -> mujoco.MjSpec:
 # the equality.
 PIPER_X_ACTUATORS = (
   BuiltinPositionActuatorCfg(
-    target_names_expr=("joint[1-3]",), stiffness=300, damping=25, effort_limit=100
+    target_names_expr=("joint[1-3]",), stiffness=80, damping=5, effort_limit=100
   ),
   BuiltinPositionActuatorCfg(
-    target_names_expr=("joint4",), stiffness=150, damping=15, effort_limit=100
+    target_names_expr=("joint4",), stiffness=40, damping=5, effort_limit=100
   ),
   BuiltinPositionActuatorCfg(
-    target_names_expr=("joint[5-6]",), stiffness=80, damping=8, effort_limit=100
+    target_names_expr=("joint[5-6]",), stiffness=10, damping=1.5, effort_limit=100
   ),
   BuiltinPositionActuatorCfg(
     target_names_expr=("gripper_joint1",), stiffness=40, damping=5, effort_limit=10
